@@ -1,0 +1,83 @@
+.spinner-canvas {
+  height: calc(100vh - 1rem);
+  width: calc(100vw - 1rem);
+  background-color: #e81e63;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-canvas > .spinner-up {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border-left: 2.5px solid white;
+  border-right: 2.5px solid white;
+  border-top: 2.5px solid #e81e63;
+  border-bottom: 2.5px solid #e81e63;
+  animation-name: upper;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  transition: animation 2s ease-in-out;
+}
+
+.spinner-canvas > .spinner-up > .spinner-down {
+  height: 2rem;
+  width: 2rem;
+  background-color: #e81e63;
+  border-radius: 100%;
+  border-left: 2.5px solid white;
+  border-right: 2.5px solid white;
+
+  border-top: 2.5px solid #e81e63;
+  border-bottom: 2.5px solid #e81e63;
+  animation-name: spinner;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-direction: unset;
+  animation-iteration-count: infinite;
+  transition: animation 2s ease-in-out;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  75% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes upper {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.25) rotate(180deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(360deg);
+  }
+  75% {
+    transform: scale(1.25) rotate(-180deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
